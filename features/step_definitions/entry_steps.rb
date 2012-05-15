@@ -5,13 +5,13 @@ end
 When /^I enter a URL and a title/ do
   @url = "http://www.unboxedconsulting.com"
   @title = "These guys rock"
-  fill_in 'Url', :with => @url
+  fill_in 'URL', :with => @url
   fill_in 'Title', :with => @title
 end
 
 When /^I enter my email address$/ do
   @email = 'user@example.com'
-  fill_in 'Email', :with => @email
+  fill_in 'Your email', :with => @email
 end
 
 When /^I submit my entry$/ do

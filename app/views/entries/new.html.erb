@@ -1,14 +1,27 @@
-<%= form_for @entry do |f| %>
-  <div>
-    <%= f.label :url %> <%= f.text_field :url %>
-  </div>
-  <div>
-    <%= f.label :title %> <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :email %> <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
+<%= form_for @entry, :html => { :class => 'well form-horizontal' } do |f| %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :url, "URL", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :url, :placeholder => "http://www.example.com", :class => 'span5' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'span5' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :email, "Your email", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email, :placeholder => "user@example.com" %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit :class => 'btn' %>
+      </div>
+    </div>
+  </fieldset>
 <% end %>
