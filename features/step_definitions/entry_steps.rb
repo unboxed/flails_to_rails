@@ -3,7 +3,8 @@ When /^I visit the entry submission form$/ do
 end
 
 When /^I enter a URL and a title/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'Url', :with => "http://www.unboxedconsulting.com"
+  fill_in 'Title', :with => "These guys rock"
 end
 
 When /^I enter my email address$/ do
