@@ -8,6 +8,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
 group :test, :development do
   gem 'rspec-rails'
 end
