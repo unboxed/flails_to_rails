@@ -27,7 +27,9 @@ Then /^my entry should be created$/ do
 end
 
 Given /^there are two entries$/ do
-  pending # express the regexp above with the code you wish you had
+  entry1 = submit_entry :title => "This is old news"
+  entry2 = submit_entry :title => "This is breaking news"
+  @entries = [entry1, entry2]
 end
 
 When /^I visit the entries page$/ do
@@ -45,3 +47,19 @@ end
 Then /^the newer one should be at the top$/ do
   pending # express the regexp above with the code you wish you had
 end
+
+module EntrySteps
+  def submit_entry(args = {})
+    entry = attributes_for(:entry).merge(args)
+
+    visit new_entry_path
+    fill_in 'URL', :with => entry[:url]
+    fill_in 'Title', :with => entry[:title]
+    fill_in 'Your email', :with => entry[:email]
+    click_on 'Create Entry'
+
+    Entry.last
+  end
+end
+
+World(EntrySteps)
