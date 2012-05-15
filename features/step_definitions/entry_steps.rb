@@ -8,7 +8,7 @@ When /^I enter a URL and a title/ do
 end
 
 When /^I enter my email address$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'Email', :with => 'user@example.com'
 end
 
 When /^I submit my entry$/ do
