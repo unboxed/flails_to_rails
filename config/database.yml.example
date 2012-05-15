@@ -1,0 +1,16 @@
+defaults : &defaults
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password:
+
+development: &DEV
+  <<: *defaults
+  database: flails_to_rails_development
+
+development_with_caching:
+  <<: *DEV
+
+test: &TEST
+  <<: *defaults
+  database: flails_to_rails_test
