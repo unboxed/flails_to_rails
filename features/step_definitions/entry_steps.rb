@@ -25,3 +25,23 @@ Then /^my entry should be created$/ do
   entry.title.should == @title
   entry.email.should == @email
 end
+
+Given /^there are two entries$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I visit the entries page$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see the two entries$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^they should each have a link to their URL$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^the newer one should be at the top$/ do
+  pending # express the regexp above with the code you wish you had
+end
