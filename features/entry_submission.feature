@@ -3,7 +3,6 @@ Feature: Users can submit an entry
   As a user
   I want to submit an entry to the site
 
-  @wip
   Scenario: Successful submission
     When I visit the entry submission form
     And  I enter a URL and a title

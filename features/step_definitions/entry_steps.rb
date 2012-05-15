@@ -3,18 +3,25 @@ When /^I visit the entry submission form$/ do
 end
 
 When /^I enter a URL and a title/ do
-  fill_in 'Url', :with => "http://www.unboxedconsulting.com"
-  fill_in 'Title', :with => "These guys rock"
+  @url = "http://www.unboxedconsulting.com"
+  @title = "These guys rock"
+  fill_in 'Url', :with => @url
+  fill_in 'Title', :with => @title
 end
 
 When /^I enter my email address$/ do
-  fill_in 'Email', :with => 'user@example.com'
+  @email = 'user@example.com'
+  fill_in 'Email', :with => @email
 end
 
 When /^I submit my entry$/ do
-  pending # express the regexp above with the code you wish you had
+  click_on 'Create Entry'
 end
 
+# Change this as soon as we have a page showing submitted entries
 Then /^my entry should be created$/ do
-  pending # express the regexp above with the code you wish you had
+  entry = Entry.last
+  entry.url.should == @url
+  entry.title.should == @title
+  entry.email.should == @email
 end
