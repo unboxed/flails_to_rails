@@ -33,7 +33,7 @@ Given /^there are two entries$/ do
 end
 
 When /^I visit the entries page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit entries_path
 end
 
 Then /^I should see the two entries$/ do
