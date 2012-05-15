@@ -4,7 +4,11 @@ class EntriesController < ApplicationController
   end
 
   def create
-    Entry.create(params[:entry])
-    render :nothing => true
+    @entry = Entry.new(params[:entry])
+    if @entry.save
+      render :nothing => true
+    else
+      render :new
+    end
   end
 end
