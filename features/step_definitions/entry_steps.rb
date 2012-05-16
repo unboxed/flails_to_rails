@@ -67,7 +67,7 @@ Then /^I should see (\d+) entries$/ do |count|
 end
 
 Then /^there should be (\d+) pages$/ do |count|
-  pending # express the regexp above with the code you wish you had
+  page.should have_pages(count.to_i)
 end
 
 Then /^I should be on page (\d+)$/ do |count|

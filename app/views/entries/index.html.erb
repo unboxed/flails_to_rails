@@ -1,12 +1,12 @@
-<div>
-  <% if @entries.empty? %>
-    <div class="alert alert-block alert-info">
-      <h4 class="alert-warning">There is nothing here :(</h4>
-      Maybe you could <%= link_to "submit an entry", new_entry_path %> to liven up the place.
-    </div>
-  <% else %>
-    <% @entries.each do |entry| %>
-      <%= render entry %>
-    <% end %>
+<% if @entries.empty? %>
+  <div class="alert alert-block alert-info">
+    <h4 class="alert-warning">There is nothing here :(</h4>
+    Maybe you could <%= link_to "submit an entry", new_entry_path %> to liven up the place.
+  </div>
+<% else %>
+  <% @entries.each do |entry| %>
+    <%= render entry %>
   <% end %>
-</div>
+<% end %>
+
+<%= paginate @entries %>
