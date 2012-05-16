@@ -37,7 +37,9 @@ When /^I visit the entries page$/ do
 end
 
 Then /^I should see the two entries$/ do
-  pending # express the regexp above with the code you wish you had
+  @entries.each do |entry|
+    page.should have_content(entry.title)
+  end
 end
 
 Then /^they should each have a link to their URL$/ do
