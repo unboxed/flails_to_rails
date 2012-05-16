@@ -10,6 +10,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     if @entry.save
+      flash[:success] = "Your entry was submitted successfully."
       redirect_to entries_path
     else
       render :new

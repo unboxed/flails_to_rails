@@ -15,6 +15,11 @@ describe EntriesController do
         post :create, :entry => entry
         response.should redirect_to entries_path
       end
+
+      it "sets a flash message" do
+        post :create, :entry => entry
+        flash[:success].should == "Your entry was submitted successfully."
+      end
     end
 
     it "renders the 'new' form again when given invalid attributes" do
