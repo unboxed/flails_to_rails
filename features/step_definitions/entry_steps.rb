@@ -70,8 +70,8 @@ Then /^there should be (\d+) pages$/ do |count|
   page.should have_pages(count.to_i)
 end
 
-Then /^I should be on page (\d+)$/ do |count|
-  pending # express the regexp above with the code you wish you had
+Then /^I should be on page (\d+)$/ do |page_num|
+  page.should be_on_page(page_num.to_i)
 end
 
 module EntrySteps

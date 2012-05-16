@@ -3,7 +3,6 @@ Feature: Entries pagination
   As a user
   I want to see paginated entries
 
-  @wip
   Scenario: Only the first 10 entries are displayed at first
     Given there are 11 entries
     When  I visit the entries page
