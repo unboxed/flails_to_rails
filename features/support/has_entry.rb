@@ -1,7 +1,7 @@
 module Capybara
   class Session
     def has_entry?(entry = {})
-      xpath = "//div[@class='entry']"
+      xpath = "//div[contains(@class,'entry')]"
 
       if entry.has_key?(:position)
         xpath << "[#{entry[:position]}]"
