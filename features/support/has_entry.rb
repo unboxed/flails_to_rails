@@ -1,11 +1,21 @@
 module Capybara
   class Session
-    def has_entry?(entry, options = {})
+    def has_entry?(entry = {})
       xpath = "//div[@class='entry']"
-      if options.has_key?(:position)
-        xpath << "[#{options[:position]}]"
+
+      if entry.has_key?(:position)
+        xpath << "[#{entry[:position]}]"
       end
-      xpath << "//a[@href='#{entry.url}'][text()='#{entry.title}']"
+
+      xpath << "//a"
+
+      if entry.has_key?(:url)
+        xpath << "[@href='#{entry[:url]}']"
+      end
+
+      if entry.has_key?(:title)
+        xpath << "[text()='#{entry[:title]}']"
+      end
 
       has_xpath?(xpath)
     end

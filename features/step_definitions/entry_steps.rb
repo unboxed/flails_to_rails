@@ -18,12 +18,9 @@ When /^I submit my entry$/ do
   click_on 'Create Entry'
 end
 
-# Change this as soon as we have a page showing submitted entries
 Then /^my entry should be created$/ do
-  entry = Entry.last
-  entry.url.should == @url
-  entry.title.should == @title
-  entry.email.should == @email
+  visit entries_path
+  page.should have_entry(:title => @title, :url => @url)
 end
 
 Given /^there are two entries$/ do
@@ -40,14 +37,14 @@ end
 
 Then /^I should see the two entries$/ do
   @entries.each do |entry|
-    page.should have_entry(entry)
+    page.should have_entry(:title => entry.title, :url => entry.url)
   end
 end
 
 Then /^they should be sorted most-recent-first/ do
   old, new = @entries
-  page.should have_entry(new, :position => 1)
-  page.should have_entry(old, :position => 2)
+  page.should have_entry(:title => new.title, :position => 1)
+  page.should have_entry(:title => old.title, :position => 2)
 end
 
 module EntrySteps
