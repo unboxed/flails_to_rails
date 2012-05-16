@@ -10,6 +10,7 @@ group :assets do
 end
 
 group :test do
+  gem 'capistrano'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
