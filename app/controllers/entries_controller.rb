@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     if @entry.save
-      render :nothing => true
+      redirect_to entries_path
     else
       render :new
     end
