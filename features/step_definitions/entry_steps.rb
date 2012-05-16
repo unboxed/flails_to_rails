@@ -55,6 +55,22 @@ Then /^I should see "(.*?)"$/ do |text|
   page.should have_content(text)
 end
 
+Given /^there are (\d+) entries$/ do |count|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see (\d+) entries$/ do |count|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^there should be (\d+) pages$/ do |count|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should be on page (\d+)$/ do |count|
+  pending # express the regexp above with the code you wish you had
+end
+
 module EntrySteps
   def submit_entry(args = {})
     entry = attributes_for(:entry).merge(args)
