@@ -43,7 +43,9 @@ Then /^I should see the two entries$/ do
 end
 
 Then /^they should each have a link to their URL$/ do
-  pending # express the regexp above with the code you wish you had
+  @entries.each do |entry|
+    page.should have_link_to(entry.url)
+  end
 end
 
 Then /^the newer one should be at the top$/ do

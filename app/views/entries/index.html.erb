@@ -1,7 +1,7 @@
 <div>
   <% @entries.each do |entry| %>
     <div class="entry">
-      <p class="title"><%= entry.title %></p>
+      <p class="title"><%= link_to entry.title, entry.url %></p>
     </div>
   <% end %>
 </div>
