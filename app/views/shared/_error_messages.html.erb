@@ -1,0 +1,11 @@
+<% if target.errors.any? %>
+  <div class="alert alert-block alert-error">
+    <h4 class="alert-heading">Validation failed</h4>
+    <%= pluralize(target.errors.count, "error") %> prohibited this record from being saved:
+    <ul>
+      <% target.errors.full_messages.each do |msg| %>
+        <%= content_tag :li, msg %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
