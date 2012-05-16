@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = Entry.most_recent_first
   end
 
   def new

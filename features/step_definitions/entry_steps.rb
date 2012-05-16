@@ -27,9 +27,11 @@ Then /^my entry should be created$/ do
 end
 
 Given /^there are two entries$/ do
-  entry1 = submit_entry :title => "This is old news"
-  entry2 = submit_entry :title => "This is breaking news"
-  @entries = [entry1, entry2]
+  @entries = []
+  Timecop.travel(3.days.ago) do
+    @entries << submit_entry(:title => "This is old news")
+  end
+  @entries << submit_entry(:title => "This is breaking news")
 end
 
 When /^I visit the entries page$/ do
@@ -38,18 +40,14 @@ end
 
 Then /^I should see the two entries$/ do
   @entries.each do |entry|
-    page.should have_content(entry.title)
+    page.should have_entry(entry)
   end
 end
 
-Then /^they should each have a link to their URL$/ do
-  @entries.each do |entry|
-    page.should have_link_to(entry.url)
-  end
-end
-
-Then /^the newer one should be at the top$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^they should be sorted most-recent-first/ do
+  old, new = @entries
+  page.should have_entry(new, :position => 1)
+  page.should have_entry(old, :position => 2)
 end
 
 module EntrySteps
