@@ -1,10 +1,12 @@
 <div>
-  <% @entries.each do |entry| %>
-    <div class="entry">
-      <h2 class="title"><%= link_to entry.title, entry.url %></h2>
-      <p class="metadata">
-        Submitted <%= time_ago_in_words(entry.created_at) %> ago by <%= entry.email %>
-      </p>
+  <% if @entries.empty? %>
+    <div class="alert alert-block alert-info">
+      <h4 class="alert-warning">There is nothing here :(</h4>
+      Maybe you could <%= link_to "submit an entry", new_entry_path %> to liven up the place.
     </div>
+  <% else %>
+    <% @entries.each do |entry| %>
+      <%= render entry %>
+    <% end %>
   <% end %>
 </div>

@@ -8,3 +8,8 @@ Feature: Users can view all submitted entries
     When  I visit the entries page
     Then  I should see the two entries
     And   they should be sorted most-recent-first
+
+  Scenario: No entries, empty page
+    Given there are no entries
+    When  I visit the entries page
+    Then  I should see "There is nothing here"

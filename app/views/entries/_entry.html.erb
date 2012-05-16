@@ -1,0 +1,6 @@
+<div class="entry">
+  <h2 class="title"><%= link_to entry.title, entry.url %></h2>
+  <p class="metadata">
+    Submitted <%= time_ago_in_words(entry.created_at) %> ago by <%= entry.email %>
+  </p>
+</div>

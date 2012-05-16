@@ -1,3 +1,7 @@
+Given /^there are no entries$/ do
+  # Do nothing, as the database is cleared before each test
+end
+
 When /^I visit the entry submission form$/ do
   visit new_entry_path
 end
@@ -45,6 +49,10 @@ Then /^they should be sorted most-recent-first/ do
   old, new = @entries
   page.should have_entry(:title => new.title, :position => 1)
   page.should have_entry(:title => old.title, :position => 2)
+end
+
+Then /^I should see "(.*?)"$/ do |text|
+  page.should have_content(text)
 end
 
 module EntrySteps
