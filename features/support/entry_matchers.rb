@@ -1,7 +1,9 @@
 module Capybara
   class Session
+    ENTRY_BASE_PATH = "//div[contains(@class,'entry')]"
+
     def has_entry?(entry = {})
-      xpath = "//div[contains(@class,'entry')]"
+      xpath = ENTRY_BASE_PATH.dup
 
       if entry.has_key?(:position)
         xpath << "[#{entry[:position]}]"
@@ -18,6 +20,10 @@ module Capybara
       end
 
       has_xpath?(xpath)
+    end
+
+    def has_entries?(count)
+      has_xpath?(ENTRY_BASE_PATH, :count => count)
     end
   end
 end

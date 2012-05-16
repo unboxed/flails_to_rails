@@ -56,11 +56,14 @@ Then /^I should see "(.*?)"$/ do |text|
 end
 
 Given /^there are (\d+) entries$/ do |count|
-  pending # express the regexp above with the code you wish you had
+  @entries = []
+  count.to_i.times do
+    @entries << submit_entry
+  end
 end
 
 Then /^I should see (\d+) entries$/ do |count|
-  pending # express the regexp above with the code you wish you had
+  page.should have_entries(count.to_i)
 end
 
 Then /^there should be (\d+) pages$/ do |count|

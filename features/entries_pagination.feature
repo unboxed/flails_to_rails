@@ -4,7 +4,7 @@ Feature: Entries pagination
   I want to see paginated entries
 
   @wip
-  Scenario: Pagination is applied with more than 10 entries
+  Scenario: Only the first 10 entries are displayed at first
     Given there are 11 entries
     When  I visit the entries page
     Then  I should see 10 entries

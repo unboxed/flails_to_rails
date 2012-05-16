@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.most_recent_first
+    @entries = Entry.most_recent_first.page(params[:page])
   end
 
   def new
