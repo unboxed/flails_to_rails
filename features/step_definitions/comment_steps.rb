@@ -28,3 +28,15 @@ Then /^they should be sorted oldest\-first$/ do
   page.should have_comment(:body => old.body, :position => 1)
   page.should have_comment(:body => new.body, :position => 2)
 end
+
+When /^I enter a comment$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I submit my comment$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^my comment should be created$/ do
+  pending # express the regexp above with the code you wish you had
+end
