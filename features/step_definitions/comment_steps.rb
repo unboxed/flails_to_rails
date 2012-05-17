@@ -1,5 +1,9 @@
 Given /^an entry with two comments$/ do
-  pending # express the regexp above with the code you wish you had
+  @entry = submit_entry
+  @comments = []
+  2.times do
+    @comments << create(:comment, :entry => @entry)
+  end
 end
 
 When /^I visit the comments page for the entry$/ do

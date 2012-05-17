@@ -4,4 +4,10 @@ FactoryGirl.define do
     title "Funny cat pictures"
     sequence(:email) { |n| "user#{n}@example.com" }
   end
+
+  factory(:comment) do
+    body "This is rubbish! Down with this sort of thing!"
+    sequence(:email) { |n| "commenter#{n}@example.com" }
+    association :entry, :factory => :entry
+  end
 end
