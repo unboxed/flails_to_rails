@@ -11,7 +11,9 @@ When /^I visit the comments page for the entry$/ do
 end
 
 Then /^I should see the two comments$/ do
-  pending # express the regexp above with the code you wish you had
+  @comments.each do |comment|
+    page.should have_comment(comment.body)
+  end
 end
 
 Then /^they should be sorted oldest\-first$/ do

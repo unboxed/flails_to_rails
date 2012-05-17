@@ -1,4 +1,6 @@
 class Entry < ActiveRecord::Base
+  has_many :comments
+
   attr_accessible :email, :title, :url
 
   validates_presence_of :url, :email

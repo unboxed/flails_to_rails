@@ -10,3 +10,11 @@
 .gravatar img {
   border-radius: 8px;
 }
+
+#entry-summary {
+  border-bottom: 1px solid #eee;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
