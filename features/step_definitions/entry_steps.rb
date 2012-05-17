@@ -1,7 +1,3 @@
-Given /^there are no entries$/ do
-  # Do nothing, as the database is cleared before each test
-end
-
 When /^I visit the entry submission form$/ do
   visit new_entry_path
 end
@@ -43,6 +39,10 @@ Then /^I should see the two entries$/ do
   @entries.each do |entry|
     page.should have_entry(:title => entry.title, :url => entry.url)
   end
+end
+
+Given /^there are no entries$/ do
+  # Do nothing, as the database is cleared before each test
 end
 
 Then /^they should be sorted most-recent-first/ do
