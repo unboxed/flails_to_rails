@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'less-rails-bootstrap'
 gem 'kaminari'
+gem 'gravatar_image_tag'
 
 group :assets do
   gem 'therubyracer', :platform => :ruby

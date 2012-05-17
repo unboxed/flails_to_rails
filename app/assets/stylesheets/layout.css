@@ -1,3 +1,12 @@
 .navbar .brand {
   color: white;
 }
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar img {
+  border-radius: 8px;
+}

@@ -76,11 +76,13 @@ end
 
 Given /^someone else has submitted an entry$/ do
   @email = 'someone.else@example.com'
-  submit_entry(:email => @email)
+  @entry = submit_entry(:email => @email)
 end
 
 Then /^I should see their Gravatar$/ do
-  pending # express the regexp above with the code you wish you had
+  hash = Digest::MD5.hexdigest(@email)
+  gravatar = "http://gravatar.com/avatar/#{hash}"
+  page.should have_image(gravatar)
 end
 
 module EntrySteps

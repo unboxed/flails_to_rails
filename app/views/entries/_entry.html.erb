@@ -1,6 +1,13 @@
-<div class="entry well">
-  <h2 class="title"><%= link_to entry.title, entry.url %></h2>
-  <p class="metadata">
-    Submitted <%= time_ago_in_words(entry.created_at) %> ago by <%= entry.email %>
-  </p>
+<div class="entry row-fluid">
+  <div class="well span12">
+    <div class="gravatar">
+      <%= gravatar_image_tag(entry.email) %>
+    </div>
+    <h2 class="title">
+      <%= link_to entry.title, entry.url %>
+    </h2>
+    <p class="metadata">
+      Submitted <%= time_ago_in_words(entry.created_at) %> ago by <%= entry.email %>
+    </p>
+  </div>
 </div>
