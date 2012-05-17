@@ -1,3 +1,4 @@
 <%= form_for [entry, comment] do |f| %>
   <%= f.text_area :body, :class => 'input-xlarge', :rows => 4 %>
+  <%= f.label :email, "Your email:" %><%= f.text_field :email, :class => 'input-xlarge', :placeholder => "user@example.com" %>
 <% end %>
