@@ -30,7 +30,7 @@ Then /^they should be sorted oldest\-first$/ do
 end
 
 When /^I enter a comment$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'comment[body]', :with => @body
 end
 
 When /^I submit my comment$/ do
