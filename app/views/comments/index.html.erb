@@ -8,12 +8,11 @@
 <div id="comments">
   <h2>Comments</h2>
 
-  <% @comments.each do |comment| %>
-    <div class="comment">
-      <p>
-        <strong><%= comment.email %></strong> said <%= time_ago_in_words(comment.created_at) %> ago:<br/>
-        <%= comment.body %>
-      </p>
-    </div>
+  <% if @comments.empty? %>
+    <p>No one has commented on this yet.</p>
+  <% else %>
+    <% @comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
   <% end %>
 </div>

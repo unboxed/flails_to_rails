@@ -9,6 +9,10 @@ Given /^an entry with two comments$/ do
   @comments << create(:comment, :entry => @entry)
 end
 
+Given /^an entry with no comments$/ do
+  @entry = submit_entry
+end
+
 When /^I visit the comments page for the entry$/ do
   visit entry_comments_path(@entry)
 end
