@@ -8,3 +8,9 @@ Feature: Viewing an entry's comments
     When  I visit the comments page for the entry
     Then  I should see the two comments
     And   they should be sorted oldest-first
+
+  @wip
+  Scenario: No comments
+    Given an entry with no comments
+    When  I visit the comments page for the entry
+    Then  I should see "No one has commented on this yet"
