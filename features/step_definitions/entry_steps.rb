@@ -75,7 +75,8 @@ Then /^I should be on page (\d+)$/ do |page_num|
 end
 
 Given /^someone else has submitted an entry$/ do
-  pending # express the regexp above with the code you wish you had
+  @email = 'someone.else@example.com'
+  submit_entry(:email => @email)
 end
 
 Then /^I should see their Gravatar$/ do
