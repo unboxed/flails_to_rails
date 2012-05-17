@@ -7,7 +7,7 @@ Given /^an entry with two comments$/ do
 end
 
 When /^I visit the comments page for the entry$/ do
-  pending # express the regexp above with the code you wish you had
+  visit entry_comments_path(@entry)
 end
 
 Then /^I should see the two comments$/ do
