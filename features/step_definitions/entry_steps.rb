@@ -74,6 +74,14 @@ Then /^I should be on page (\d+)$/ do |page_num|
   page.should be_on_page(page_num.to_i)
 end
 
+Given /^someone else has submitted an entry$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see their Gravatar$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
 module EntrySteps
   def submit_entry(args = {})
     entry = attributes_for(:entry).merge(args)
