@@ -4,4 +4,12 @@ class CommentsController < ApplicationController
     @comments = @entry.comments
     @new_comment = @entry.new_comment
   end
+
+  def create
+    @entry = Entry.find(params[:entry_id])
+    @comment = @entry.comments.new(params[:comment])
+    if @comment.save
+      redirect_to entry_comments_path(@entry)
+    end
+  end
 end

@@ -9,8 +9,14 @@ module Capybara
         xpath << "[#{comment[:position]}]"
       end
 
-      if comment.has_key?(:body)
-        xpath << "//p[contains(.,'#{comment[:body]}')]"
+      if comment.has_key?(:body) || comment.has_key?(:email)
+        xpath << "//p"
+        if comment.has_key?(:body)
+          xpath << "[contains(.,'#{comment[:body]}')]"
+        end
+        if comment.has_key?(:email)
+          xpath << "[contains(.,'#{comment[:email]}')]"
+        end
       end
 
       has_xpath?(xpath)

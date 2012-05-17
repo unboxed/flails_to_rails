@@ -3,7 +3,6 @@ Feature: Commenting on entries
   As a user
   I want to be able to comment on an entry
 
-  @wip
   Scenario: Adding the first comment to an entry
     Given an entry with no comments
     When  I visit the comments page for the entry

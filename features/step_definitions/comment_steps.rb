@@ -19,7 +19,7 @@ end
 
 Then /^I should see the two comments$/ do
   @comments.each do |comment|
-    page.should have_comment(:body => comment.body)
+    page.should have_comment(:body => comment.body, :email => comment.email)
   end
 end
 
@@ -34,9 +34,10 @@ When /^I enter a comment$/ do
 end
 
 When /^I submit my comment$/ do
-  pending # express the regexp above with the code you wish you had
+  click_on 'Add Comment'
 end
 
 Then /^my comment should be created$/ do
-  pending # express the regexp above with the code you wish you had
+  visit entry_comments_path(@entry)
+  page.should have_comment(:body => @body, :email => @email)
 end
