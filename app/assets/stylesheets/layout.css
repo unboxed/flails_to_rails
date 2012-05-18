@@ -7,8 +7,16 @@
   margin-right: 10px;
 }
 
+.gravatar-small {
+  padding-top: 4px;
+}
+
 .gravatar img {
   border-radius: 8px;
+}
+
+.gravatar-small img {
+  border-radius: 3px;
 }
 
 #entry-summary {

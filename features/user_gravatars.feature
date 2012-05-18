@@ -8,7 +8,6 @@ Feature: Users have Gravatars
     When  I visit the entries page
     Then  I should see their Gravatar
 
-  @wip
   Scenario: Viewing the Gravatar of the user who wrote an entry
     Given an entry
     And   someone else has commented on the entry

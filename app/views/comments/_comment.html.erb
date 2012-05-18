@@ -1,5 +1,6 @@
 <div class="comment">
   <p>
+    <span class="gravatar gravatar-small"><%= gravatar_image_tag(comment.email, :gravatar => { :size => 30 }) %></span>
     <strong><%= comment.email %></strong> said <%= time_ago_in_words(comment.created_at) %> ago:<br/>
     <%= comment.body %>
   </p>

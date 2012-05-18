@@ -43,9 +43,14 @@ Then /^my comment should be created$/ do
   page.should have_comment(:body => @body, :email => @email)
 end
 
+Given /^someone else has commented on the entry$/ do
+  @email = 'someone.else@example.com'
+  @comment = add_comment(@entry, :email => @email)
+end
+
 module CommentSteps
-  def add_comment(entry)
-    comment = attributes_for(:comment)
+  def add_comment(entry, attribs = {})
+    comment = attributes_for(:comment).merge(attribs)
 
     visit entry_comments_path(entry)
     fill_in 'comment[body]', :with => comment[:body]
