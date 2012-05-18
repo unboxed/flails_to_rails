@@ -8,7 +8,7 @@
     </h2>
     <p class="metadata">
       Submitted <%= time_ago_in_words(entry.created_at) %> ago by <%= entry.email %><br/>
-      <%= link_to "view comments", entry_comments_path(entry) %>
+      <%= comments_link_for_entry(entry) %>
     </p>
   </div>
 </div>
