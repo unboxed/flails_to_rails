@@ -9,7 +9,7 @@ Given /^an entry with two comments$/ do
   @comments << add_comment(@entry)
 end
 
-Given /^an entry with no comments$/ do
+Given /^an entry(?: with no comments)?$/ do
   @entry = submit_entry
 end
 
