@@ -9,8 +9,8 @@ class Entry < ActiveRecord::Base
     order('created_at DESC')
   end
 
-  def new_comment
-    comment = Comment.new
+  def new_comment(params = {})
+    comment = Comment.new(params)
     comment.entry = self
     comment
   end

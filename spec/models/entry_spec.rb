@@ -14,4 +14,10 @@ describe Entry do
     comment = entry.new_comment
     comment.entry.should == entry
   end
+
+  it "initialises the new comment with the parameters given, if any" do
+    entry = Entry.new
+    comment = entry.new_comment(:body => "I love cats")
+    comment.body.should == "I love cats"
+  end
 end

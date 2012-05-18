@@ -7,10 +7,14 @@ class CommentsController < ApplicationController
 
   def create
     @entry = Entry.find(params[:entry_id])
-    @comment = @entry.comments.new(params[:comment])
-    if @comment.save
+    @new_comment = @entry.new_comment(params[:comment])
+
+    if @new_comment.save
       flash[:success] = "Your comment was submitted successfully."
       redirect_to entry_comments_path(@entry)
+    else
+      @comments = @entry.comments
+      render :index
     end
   end
 end
