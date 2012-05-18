@@ -1,3 +1,4 @@
+<%= render 'shared/error_messages', :target => comment %>
 <%= form_for [entry, comment] do |f| %>
   <div>
     <%= f.text_area :body, :class => 'input-xlarge', :rows => 4 %>
