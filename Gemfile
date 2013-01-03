@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.10'
-gem 'mysql2'
+gem 'sqlite3'
 gem 'less-rails-bootstrap'
 gem 'kaminari'
 gem 'gravatar_image_tag'
